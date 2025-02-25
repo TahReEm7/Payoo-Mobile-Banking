@@ -19,5 +19,6 @@ document.getElementById("Add-money-btn").addEventListener("click", function(even
     else{
         alert("invalid pin")
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 })
 
