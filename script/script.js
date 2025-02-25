@@ -5,6 +5,7 @@ document.getElementById("add").addEventListener("click", function(){
     document.getElementById("add-money-box").style.display = "block";
     document.getElementById("cashout-box").style.display="none";
     document.getElementById("transfer-box").style.display="none";
+    document.getElementById("bonus-box").style.display="none"
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -40,6 +41,7 @@ document.getElementById("cashout").addEventListener("click", function(){
     document.getElementById("cashout-box").style.display = "block";
     document.getElementById("add-money-box").style.display="none";
     document.getElementById("transfer-box").style.display="none";
+    document.getElementById("bonus-box").style.display="none"
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -73,11 +75,13 @@ document.getElementById("cashout-btn").addEventListener("click", function(event)
 });
 
 // transfer box
+document.getElementById("transfer-box").style.display="none";
 
 document.getElementById("transfer").addEventListener("click", function(){
     document.getElementById("cashout-box").style.display = "none";
     document.getElementById("add-money-box").style.display="none";
     document.getElementById("transfer-box").style.display="block";
+    document.getElementById("bonus-box").style.display="none"
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -109,3 +113,23 @@ document.getElementById("send-btn").addEventListener("click", function(event){
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// bonus
+   document.getElementById("bonus-box").style.display="none"
+
+document.getElementById("bonus").addEventListener("click", function(){
+    document.getElementById("cashout-box").style.display = "none";
+    document.getElementById("add-money-box").style.display="none";
+    document.getElementById("transfer-box").style.display="none";
+    document.getElementById("bonus-box").style.display="block"
+    window.scrollTo({ top: 150, behavior: 'smooth' });
+});
+
+document.getElementById("bonus-btn").addEventListener("click", function(event){
+    event.preventDefault();
+    let coupon = document.getElementById("Coupon")
+    if(coupon){
+        alert ("feature not availabe")
+        return;
+    }
+})

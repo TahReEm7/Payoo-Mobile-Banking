@@ -40,7 +40,7 @@
                 <img src="./assets/money1.png" alt="image">
                 <p>Transfer Money</p>
             </div>
-            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+            <div id="bonus" class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
                 <img src="./assets/bonus1.png" alt="image">
                 <p>Get Bonus</p>
             </div>
@@ -163,6 +163,24 @@
             </div>
           </div>
         </section>
+
+        <!-- Bonus -->
+         <section id="bonus-box" class="m-2 md:m-5 h-[400px]">
+          <h1 class="text-center font-bold text-3xl">Get Bonus</h1>
+          <div class="hero flex-col lg:flex-row-reverse">
+            <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+              <form class="card-body">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Enter Coupon</span>
+                  </label>
+                  <input id="Coupon" type="number" placeholder=" Enter Coupon Number" class="input input-bordered" required />
+                </div>
+                <div class="form-control mt-6">
+                  <button id="bonus-btn" class="btn btn-primary">Get Bonus</button>
+                </div>
+          </div>
+         </section>
     </footer>
     <script src="./script/logout.js"></script>
     <script src="./script/script.js"></script>
