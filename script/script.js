@@ -4,6 +4,7 @@ document.getElementById("add-money-box").style.display="none"
 document.getElementById("add").addEventListener("click", function(){
     document.getElementById("add-money-box").style.display = "block";
     document.getElementById("cashout-box").style.display="none";
+    document.getElementById("transfer-box").style.display="none";
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -37,7 +38,8 @@ document.getElementById("cashout-box").style.display="none";
 
 document.getElementById("cashout").addEventListener("click", function(){
     document.getElementById("cashout-box").style.display = "block";
-    document.getElementById("add-money-box").style.display="none"
+    document.getElementById("add-money-box").style.display="none";
+    document.getElementById("transfer-box").style.display="none";
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -61,6 +63,44 @@ document.getElementById("cashout-btn").addEventListener("click", function(event)
 
     if(accountNumber.length === 11 && loginPin.length === 4){
         mainBalance -= cashoutAmount;
+        mainBalanceElement.innerText = mainBalance;
+        
+    }
+    else{
+        alert("invalid pin")
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// transfer box
+
+document.getElementById("transfer").addEventListener("click", function(){
+    document.getElementById("cashout-box").style.display = "none";
+    document.getElementById("add-money-box").style.display="none";
+    document.getElementById("transfer-box").style.display="block";
+    window.scrollTo({ top: 320, behavior: 'smooth' });
+})
+
+
+document.getElementById("send-btn").addEventListener("click", function(event){
+    event.preventDefault();
+    let mainBalanceElement = document.getElementById("main-balance");
+    let mainBalance = parseFloat(mainBalanceElement.innerText);
+    let transferAmount = parseFloat(document.getElementById("transfer-amount").value);
+    const accountNumber = document.getElementById("account-number").value;
+    let loginPin = document.getElementById("login-pin").value;
+
+    if (transferAmount > mainBalance) {
+        alert("Insufficient balance");
+        return;
+    }
+    if(transferAmount < 0 ){
+        alert (" enter a valid amount");
+        return;
+    }
+
+    if(accountNumber.length === 11 && loginPin.length === 4){
+        mainBalance -= transferAmount;
         mainBalanceElement.innerText = mainBalance;
         
     }

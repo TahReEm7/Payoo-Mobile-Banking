@@ -36,7 +36,7 @@
                 <img src="./assets/send1.png" alt="image">
                 <p>Cash Out</p>
             </div>
-            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+            <div id="transfer" class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
                 <img src="./assets/money1.png" alt="image">
                 <p>Transfer Money</p>
             </div>
@@ -56,9 +56,9 @@
     </main>
     <footer>
        <!-- add money -->
-        <section id="add-money-box" class="m-5">
+        <section id="add-money-box" class="m-2 md:m-5">
             <h1 class="text-center font-bold text-3xl">Add Money</h1>
-            <div class="hero bg-white m-4 w-full">
+            <div class="hero bg-white md:m-4 w-full">
                   <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <form class="card-body">
                       <div class="form-control">
@@ -97,8 +97,9 @@
         </section>
 
           <!-- cash out -->
-        <section id="cashout-box">
-          <div class="hero bg-white m-4 w-full">
+        <section id="cashout-box"class="m-2 md:m-5">
+          <h1 class="text-center font-bold text-3xl">Cash Out</h1>
+          <div class="hero bg-white md:m-4 w-full">
             <div class="w-full hero-content flex-col ">
               <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                 <form class="card-body">
@@ -122,6 +123,40 @@
                   </div>
                   <div class="form-control mt-6">
                     <button id="cashout-btn" class="btn btn-primary text-white">Cash Out</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- transfer box -->
+        <section id="transfer-box"class="m-2 md:m-5">
+          <h1 class="text-center font-bold text-3xl">Transfer Money</h1>
+          <div class="hero bg-white md:m-4 w-full">
+            <div class="w-full hero-content flex-col ">
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Account Number</span>
+                    </label>
+                    <input id="account-number" value="01319550316" type="number" placeholder="Enter 11 digit number" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount</span>
+                    </label>
+                    <input id="transfer-amount" type="number" placeholder="Enter Amount" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">PIN</span>
+                    </label>
+                    <input id="login-pin" value="1234" type="number" placeholder="Enter PIN" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="send-btn" class="btn btn-primary text-white">Send Now</button>
                   </div>
                 </form>
               </div>
