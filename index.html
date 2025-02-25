@@ -8,8 +8,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <section>
-        
+    <section class="md:container md:mx-auto relative bg-slate-600">  
+        <div class="hero bg-white min-h-screen">
+            <div class="w-full hero-content flex-col ">
+                <div class="flex items-center justify-center">
+                    <img class="absolute" src="./assets/bg.png" alt="">
+                    <img class="absolute top-14" src="./assets/Group.png" alt="">
+                </div>
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Mobile Number</span>
+                    </label>
+                    <input id="mobile-number" value="01319550316" type="number" placeholder="Enter Mobile Number" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">PIN</span>
+                    </label>
+                    <input id="login-pin" value="1234" type="number" placeholder="Enter PIN" class="input input-bordered" required />
+                    <label class="label">
+                      <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                    </label>
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="login-btn" class="btn btn-primary">Login</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
     </section>
+    <script src="./script/login.js"></script>
 </body>
 </html>
