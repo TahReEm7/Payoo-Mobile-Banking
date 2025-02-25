@@ -1,6 +1,5 @@
 document.getElementById("login-btn").addEventListener("click", function(event){
     event.preventDefault();
-    console.log("clicked")
     const mobileNumber = document.getElementById("mobile-number").value;
     const loginPin = document.getElementById("login-pin").value;
     
@@ -11,3 +10,4 @@ document.getElementById("login-btn").addEventListener("click", function(event){
         alert("invalid input")
     }
 })
+

@@ -1,12 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo Mobile Banking</title>
+    <title>Payoo Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    
-    <script src="./script/login.js"></script>
+<body class="md:container md:mx-auto">
+    <header>
+        <nav class="flex justify-around items-center p-5 shadow-lg ">
+            <div class="flex gap-2">
+                <img class="w-10 md:w-20" src="./assets/Group.png" alt="logo">
+            <div class="flex items-center text-center justify-center flex-col">
+                <h1 class="text-xl md:text-3xl font-semibold md:font-bold"><span class="hidden md:inline-flex">BDT</span> <span id="main-balance">4500</span><span class="font-extrabold">৳</span></h1>
+                <p>Available Balance</p>
+            </div>
+            </div>
+            <button id="logout-btn" class="btn btn-sm md:btn-md btn-outline"><i class='bx bx-log-out'></i> Log Out</button>
+        </nav>
+    </header>
+    <main>
+        <section class="md:mx-5 grid justify-center items-center grid-cols-2 md:grid-cols-3 grid-rows-2 gap-3 mt-5 p-3">
+            <div id="add" class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+                <img src="./assets/wallet1.png" alt="image">
+                <p>Add Money</p>
+            </div>
+            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+                <img src="./assets/send1.png" alt="image">
+                <p>Cash Out</p>
+            </div>
+            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+                <img src="./assets/money1.png" alt="image">
+                <p>Transfer Money</p>
+            </div>
+            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+                <img src="./assets/bonus1.png" alt="image">
+                <p>Get Bonus</p>
+            </div>
+            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+                <img src="./assets/money1.png" alt="image">
+                <p>Pay BIll</p>
+            </div>
+            <div class="border flex justify-center items-center flex-col gap-3 p-5  text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+                <img src="./assets/transaction1.png" alt="image">
+                <p>Transactions</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="add-money-box" class="m-5">
+            <h1 class="text-center font-bold text-3xl">Add Money</h1>
+            <div class="hero bg-white m-4 w-full">
+                  <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                    <form class="card-body">
+                      <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Select A Bank</span>
+                          </label>
+                        <select class="select select-bordered w-full max-w-xs">
+                            <option disabled selected>Select Bank</option>
+                            <option>BKash</option>
+                            <option>Nagad</option>
+                            <option>Visa Card</option>
+                            <option>Visa Card</option>
+                            <option>Master Card</option>
+                          </select>
+                        <label class="label">
+                          <span class="label-text">Bank Account Number</span>
+                        </label>
+                        <input id="mobile-number" value="01319550316" type="number" placeholder="Enter Account Number" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">Add to Amount</span>
+                        </label>
+                        <input id="add-money" type="number" placeholder="Enter Amount" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control">
+                        <label class="label">
+                          <span class="label-text">PIN</span>
+                        </label>
+                        <input id="login-pin" value="1234" type="number" placeholder="Enter PIN" class="input input-bordered" required />
+                      </div>
+                      <div class="form-control mt-6">
+                        <button id="Add-money-btn" class="btn btn-primary text-white">Add Money</button>
+                      </div>
+                    </form>
+        </section>
+    </footer>
+    <script src="./script/logout.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
