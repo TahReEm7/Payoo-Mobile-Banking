@@ -26,12 +26,13 @@
        </div>
     </header>
     <main>
+     
         <section class="md:mx-5 grid justify-center items-center grid-cols-2 md:grid-cols-3 grid-rows-2 gap-3 mt-5 p-3">
             <div id="add" class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
                 <img src="./assets/wallet1.png" alt="image">
                 <p>Add Money</p>
             </div>
-            <div class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
+            <div id="cashout" class="border flex justify-center items-center flex-col gap-3 p-5 text-center rounded-md shadow-md cursor-pointer duration-300 ease-in hover:scale-105">
                 <img src="./assets/send1.png" alt="image">
                 <p>Cash Out</p>
             </div>
@@ -54,6 +55,7 @@
         </section>
     </main>
     <footer>
+       <!-- add money -->
         <section id="add-money-box" class="m-5">
             <h1 class="text-center font-bold text-3xl">Add Money</h1>
             <div class="hero bg-white m-4 w-full">
@@ -63,18 +65,18 @@
                         <label class="label">
                             <span class="label-text">Select A Bank</span>
                           </label>
-                        <select class="select select-bordered w-full max-w-xs">
+                        <select id="select" class="select select-bordered w-full max-w-xs" required>
                             <option disabled selected>Select Bank</option>
                             <option>BKash</option>
                             <option>Nagad</option>
-                            <option>Visa Card</option>
-                            <option>Visa Card</option>
-                            <option>Master Card</option>
+                            <option>Upay</option>
+                            <option>DDBL</option>
+                            <option>Other</option>
                           </select>
                         <label class="label">
                           <span class="label-text">Bank Account Number</span>
                         </label>
-                        <input id="mobile-number" value="01319550316" type="number" placeholder="Enter Account Number" class="input input-bordered" required />
+                        <input id="mobile-number" value="01319550316" type="number" placeholder="Enter 11 digit number" class="input input-bordered" required />
                       </div>
                       <div class="form-control">
                         <label class="label">
@@ -92,6 +94,39 @@
                         <button id="Add-money-btn" class="btn btn-primary text-white">Add Money</button>
                       </div>
                     </form>
+        </section>
+
+          <!-- cash out -->
+        <section id="cashout-box">
+          <div class="hero bg-white m-4 w-full">
+            <div class="w-full hero-content flex-col ">
+              <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Account Number</span>
+                    </label>
+                    <input id="account-number" value="01319550316" type="number" placeholder="Enter 11 digit number" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Amount</span>
+                    </label>
+                    <input id="cashout-amount" type="number" placeholder="Enter Amount" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">PIN</span>
+                    </label>
+                    <input id="login-pin" value="1234" type="number" placeholder="Enter PIN" class="input input-bordered" required />
+                  </div>
+                  <div class="form-control mt-6">
+                    <button id="cashout-btn" class="btn btn-primary text-white">Cash Out</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </section>
     </footer>
     <script src="./script/logout.js"></script>
