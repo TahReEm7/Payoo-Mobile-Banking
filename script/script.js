@@ -5,7 +5,8 @@ document.getElementById("add").addEventListener("click", function(){
     document.getElementById("add-money-box").style.display = "block";
     document.getElementById("cashout-box").style.display="none";
     document.getElementById("transfer-box").style.display="none";
-    document.getElementById("bonus-box").style.display="none"
+    document.getElementById("bonus-box").style.display="none";
+    document.getElementById("pay-box").style.display="none";
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -41,7 +42,8 @@ document.getElementById("cashout").addEventListener("click", function(){
     document.getElementById("cashout-box").style.display = "block";
     document.getElementById("add-money-box").style.display="none";
     document.getElementById("transfer-box").style.display="none";
-    document.getElementById("bonus-box").style.display="none"
+    document.getElementById("bonus-box").style.display="none";
+    document.getElementById("pay-box").style.display="none";
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -81,7 +83,8 @@ document.getElementById("transfer").addEventListener("click", function(){
     document.getElementById("cashout-box").style.display = "none";
     document.getElementById("add-money-box").style.display="none";
     document.getElementById("transfer-box").style.display="block";
-    document.getElementById("bonus-box").style.display="none"
+    document.getElementById("bonus-box").style.display="none";
+    document.getElementById("pay-box").style.display="none";
     window.scrollTo({ top: 320, behavior: 'smooth' });
 })
 
@@ -121,7 +124,8 @@ document.getElementById("bonus").addEventListener("click", function(){
     document.getElementById("cashout-box").style.display = "none";
     document.getElementById("add-money-box").style.display="none";
     document.getElementById("transfer-box").style.display="none";
-    document.getElementById("bonus-box").style.display="block"
+    document.getElementById("bonus-box").style.display="block";
+    document.getElementById("pay-box").style.display="none";
     window.scrollTo({ top: 150, behavior: 'smooth' });
 });
 
@@ -129,7 +133,49 @@ document.getElementById("bonus-btn").addEventListener("click", function(event){
     event.preventDefault();
     let coupon = document.getElementById("Coupon")
     if(coupon){
-        alert ("feature not availabe")
+        alert ("feature not available")
         return;
     }
 })
+
+// pay bill
+
+document.getElementById("pay-box").style.display="none";
+
+document.getElementById("pay").addEventListener("click", function(){
+    document.getElementById("cashout-box").style.display = "none";
+    document.getElementById("add-money-box").style.display="none";
+    document.getElementById("transfer-box").style.display="none";
+    document.getElementById("bonus-box").style.display="none";
+    document.getElementById("pay-box").style.display="block";
+    window.scrollTo({ top: 320, behavior: 'smooth' });
+})
+
+
+document.getElementById("pay-btn").addEventListener("click", function(event){
+    event.preventDefault();
+    let mainBalanceElement = document.getElementById("main-balance");
+    let mainBalance = parseFloat(mainBalanceElement.innerText);
+    let payAmount = parseFloat(document.getElementById("pay-money").value);
+    const billerNumber = document.getElementById("biller-number").value;
+    let loginPin = document.getElementById("login-pin").value;
+
+    if (payAmount > mainBalance) {
+        alert("Insufficient balance");
+        return;
+    }
+    if(payAmount < 0 ){
+        alert (" enter a valid amount");
+        return;
+    }
+
+    if(billerNumber.length === 11 && loginPin.length === 4){
+        mainBalance -= payAmount;
+        mainBalanceElement.innerText = mainBalance;
+        
+    }
+    else{
+        alert("invalid pin")
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
